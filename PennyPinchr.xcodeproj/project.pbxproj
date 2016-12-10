@@ -16,6 +16,7 @@
 		03979CD71DFB1AA100855574 /* PennyPinchrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CD61DFB1AA100855574 /* PennyPinchrUITests.swift */; };
 		03979CE51DFB2A5200855574 /* ButtonBorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */; };
 		03979CE71DFC4A6800855574 /* ButtonBlackBorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */; };
+		03979CE91DFC5E3100855574 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CE81DFC5E3100855574 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		03979CD81DFB1AA100855574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorderRadius.swift; sourceTree = "<group>"; };
 		03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBlackBorderRadius.swift; sourceTree = "<group>"; };
+		03979CE81DFC5E3100855574 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */,
 				03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */,
+				03979CE81DFC5E3100855574 /* HomeViewController.swift */,
 				03979CB81DFB1AA100855574 /* ViewController.swift */,
 				03979CBA1DFB1AA100855574 /* Main.storyboard */,
 				03979CBD1DFB1AA100855574 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03979CE91DFC5E3100855574 /* HomeViewController.swift in Sources */,
 				03979CE51DFB2A5200855574 /* ButtonBorderRadius.swift in Sources */,
 				03979CB91DFB1AA100855574 /* ViewController.swift in Sources */,
 				03979CB71DFB1AA100855574 /* AppDelegate.swift in Sources */,
