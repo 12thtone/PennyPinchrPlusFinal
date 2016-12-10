@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03979CB71DFB1AA100855574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CB61DFB1AA100855574 /* AppDelegate.swift */; };
+		03979CB91DFB1AA100855574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CB81DFB1AA100855574 /* ViewController.swift */; };
+		03979CBC1DFB1AA100855574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03979CBA1DFB1AA100855574 /* Main.storyboard */; };
+		03979CBE1DFB1AA100855574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03979CBD1DFB1AA100855574 /* Assets.xcassets */; };
+		03979CC11DFB1AA100855574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03979CBF1DFB1AA100855574 /* LaunchScreen.storyboard */; };
+		03979CCC1DFB1AA100855574 /* PennyPinchrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CCB1DFB1AA100855574 /* PennyPinchrTests.swift */; };
+		03979CD71DFB1AA100855574 /* PennyPinchrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CD61DFB1AA100855574 /* PennyPinchrUITests.swift */; };
+		03979CE51DFB2A5200855574 /* ButtonBorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */; };
+		03979CE71DFC4A6800855574 /* ButtonBlackBorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03979CC81DFB1AA100855574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03979CAB1DFB1AA100855574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03979CB21DFB1AA100855574;
+			remoteInfo = PennyPinchr;
+		};
+		03979CD31DFB1AA100855574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03979CAB1DFB1AA100855574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03979CB21DFB1AA100855574;
+			remoteInfo = PennyPinchr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03979CB31DFB1AA100855574 /* PennyPinchr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennyPinchr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03979CB61DFB1AA100855574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03979CB81DFB1AA100855574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03979CBB1DFB1AA100855574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03979CBD1DFB1AA100855574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03979CC01DFB1AA100855574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03979CC21DFB1AA100855574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03979CC71DFB1AA100855574 /* PennyPinchrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennyPinchrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03979CCB1DFB1AA100855574 /* PennyPinchrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PennyPinchrTests.swift; sourceTree = "<group>"; };
+		03979CCD1DFB1AA100855574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03979CD21DFB1AA100855574 /* PennyPinchrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennyPinchrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03979CD61DFB1AA100855574 /* PennyPinchrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PennyPinchrUITests.swift; sourceTree = "<group>"; };
+		03979CD81DFB1AA100855574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBorderRadius.swift; sourceTree = "<group>"; };
+		03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBlackBorderRadius.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03979CB01DFB1AA100855574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CC41DFB1AA100855574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CCF1DFB1AA100855574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03979CAA1DFB1AA100855574 = {
+			isa = PBXGroup;
+			children = (
+				03979CB51DFB1AA100855574 /* PennyPinchr */,
+				03979CCA1DFB1AA100855574 /* PennyPinchrTests */,
+				03979CD51DFB1AA100855574 /* PennyPinchrUITests */,
+				03979CB41DFB1AA100855574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03979CB41DFB1AA100855574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03979CB31DFB1AA100855574 /* PennyPinchr.app */,
+				03979CC71DFB1AA100855574 /* PennyPinchrTests.xctest */,
+				03979CD21DFB1AA100855574 /* PennyPinchrUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03979CB51DFB1AA100855574 /* PennyPinchr */ = {
+			isa = PBXGroup;
+			children = (
+				03979CE41DFB2A5200855574 /* ButtonBorderRadius.swift */,
+				03979CE61DFC4A6800855574 /* ButtonBlackBorderRadius.swift */,
+				03979CB81DFB1AA100855574 /* ViewController.swift */,
+				03979CBA1DFB1AA100855574 /* Main.storyboard */,
+				03979CBD1DFB1AA100855574 /* Assets.xcassets */,
+				03979CBF1DFB1AA100855574 /* LaunchScreen.storyboard */,
+				03979CC21DFB1AA100855574 /* Info.plist */,
+				03979CB61DFB1AA100855574 /* AppDelegate.swift */,
+			);
+			path = PennyPinchr;
+			sourceTree = "<group>";
+		};
+		03979CCA1DFB1AA100855574 /* PennyPinchrTests */ = {
+			isa = PBXGroup;
+			children = (
+				03979CCB1DFB1AA100855574 /* PennyPinchrTests.swift */,
+				03979CCD1DFB1AA100855574 /* Info.plist */,
+			);
+			path = PennyPinchrTests;
+			sourceTree = "<group>";
+		};
+		03979CD51DFB1AA100855574 /* PennyPinchrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03979CD61DFB1AA100855574 /* PennyPinchrUITests.swift */,
+				03979CD81DFB1AA100855574 /* Info.plist */,
+			);
+			path = PennyPinchrUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03979CB21DFB1AA100855574 /* PennyPinchr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03979CDB1DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchr" */;
+			buildPhases = (
+				03979CAF1DFB1AA100855574 /* Sources */,
+				03979CB01DFB1AA100855574 /* Frameworks */,
+				03979CB11DFB1AA100855574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PennyPinchr;
+			productName = PennyPinchr;
+			productReference = 03979CB31DFB1AA100855574 /* PennyPinchr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03979CC61DFB1AA100855574 /* PennyPinchrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03979CDE1DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchrTests" */;
+			buildPhases = (
+				03979CC31DFB1AA100855574 /* Sources */,
+				03979CC41DFB1AA100855574 /* Frameworks */,
+				03979CC51DFB1AA100855574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03979CC91DFB1AA100855574 /* PBXTargetDependency */,
+			);
+			name = PennyPinchrTests;
+			productName = PennyPinchrTests;
+			productReference = 03979CC71DFB1AA100855574 /* PennyPinchrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03979CD11DFB1AA100855574 /* PennyPinchrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03979CE11DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchrUITests" */;
+			buildPhases = (
+				03979CCE1DFB1AA100855574 /* Sources */,
+				03979CCF1DFB1AA100855574 /* Frameworks */,
+				03979CD01DFB1AA100855574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03979CD41DFB1AA100855574 /* PBXTargetDependency */,
+			);
+			name = PennyPinchrUITests;
+			productName = PennyPinchrUITests;
+			productReference = 03979CD21DFB1AA100855574 /* PennyPinchrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03979CAB1DFB1AA100855574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = MMMD;
+				TargetAttributes = {
+					03979CB21DFB1AA100855574 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A6KJB7CEQ9;
+						ProvisioningStyle = Automatic;
+					};
+					03979CC61DFB1AA100855574 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A6KJB7CEQ9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03979CB21DFB1AA100855574;
+					};
+					03979CD11DFB1AA100855574 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A6KJB7CEQ9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03979CB21DFB1AA100855574;
+					};
+				};
+			};
+			buildConfigurationList = 03979CAE1DFB1AA100855574 /* Build configuration list for PBXProject "PennyPinchr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03979CAA1DFB1AA100855574;
+			productRefGroup = 03979CB41DFB1AA100855574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03979CB21DFB1AA100855574 /* PennyPinchr */,
+				03979CC61DFB1AA100855574 /* PennyPinchrTests */,
+				03979CD11DFB1AA100855574 /* PennyPinchrUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03979CB11DFB1AA100855574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03979CC11DFB1AA100855574 /* LaunchScreen.storyboard in Resources */,
+				03979CBE1DFB1AA100855574 /* Assets.xcassets in Resources */,
+				03979CBC1DFB1AA100855574 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CC51DFB1AA100855574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CD01DFB1AA100855574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03979CAF1DFB1AA100855574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03979CE51DFB2A5200855574 /* ButtonBorderRadius.swift in Sources */,
+				03979CB91DFB1AA100855574 /* ViewController.swift in Sources */,
+				03979CB71DFB1AA100855574 /* AppDelegate.swift in Sources */,
+				03979CE71DFC4A6800855574 /* ButtonBlackBorderRadius.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CC31DFB1AA100855574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03979CCC1DFB1AA100855574 /* PennyPinchrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03979CCE1DFB1AA100855574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03979CD71DFB1AA100855574 /* PennyPinchrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03979CC91DFB1AA100855574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03979CB21DFB1AA100855574 /* PennyPinchr */;
+			targetProxy = 03979CC81DFB1AA100855574 /* PBXContainerItemProxy */;
+		};
+		03979CD41DFB1AA100855574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03979CB21DFB1AA100855574 /* PennyPinchr */;
+			targetProxy = 03979CD31DFB1AA100855574 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03979CBA1DFB1AA100855574 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03979CBB1DFB1AA100855574 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03979CBF1DFB1AA100855574 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03979CC01DFB1AA100855574 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03979CD91DFB1AA100855574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03979CDA1DFB1AA100855574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03979CDC1DFB1AA100855574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		03979CDD1DFB1AA100855574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		03979CDF1DFB1AA100855574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PennyPinchr.app/PennyPinchr";
+			};
+			name = Debug;
+		};
+		03979CE01DFB1AA100855574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PennyPinchr.app/PennyPinchr";
+			};
+			name = Release;
+		};
+		03979CE21DFB1AA100855574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PennyPinchr;
+			};
+			name = Debug;
+		};
+		03979CE31DFB1AA100855574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = A6KJB7CEQ9;
+				INFOPLIST_FILE = PennyPinchrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmmd.PennyPinchrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PennyPinchr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03979CAE1DFB1AA100855574 /* Build configuration list for PBXProject "PennyPinchr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03979CD91DFB1AA100855574 /* Debug */,
+				03979CDA1DFB1AA100855574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03979CDB1DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03979CDC1DFB1AA100855574 /* Debug */,
+				03979CDD1DFB1AA100855574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03979CDE1DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03979CDF1DFB1AA100855574 /* Debug */,
+				03979CE01DFB1AA100855574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03979CE11DFB1AA100855574 /* Build configuration list for PBXNativeTarget "PennyPinchrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03979CE21DFB1AA100855574 /* Debug */,
+				03979CE31DFB1AA100855574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03979CAB1DFB1AA100855574 /* Project object */;
+}
