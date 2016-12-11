@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -17,11 +18,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var taxPicker: UIPickerView!
     
+    var delegate: SessionDelegate?
     
     var budget = 0.0
     var spent = 0.0
     var remaining = 0.0
     var lastItem = 0.0
+    var cash = 0.0
+    var credit = 0.0
     
     var taxL = 0
     var taxR = 0
@@ -32,6 +36,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isHidden = true
         
         taxPicker.delegate = self
         taxPicker.dataSource = self
@@ -56,12 +62,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func changeViews() {
-        spentLabel.text = "$\(String(format: "%.2f", spent))"
+        spentLabel.text = DataService.ds.toMoney(rawMoney: spent)
         
         if hasCreditCard {
-            remainingLabel.text = "Cash: $\(String(format: "%.2f", budget)) - Credit: $\(String(format: "%.2f", spent - budget))"
+            remainingLabel.text = "Cash: \(DataService.ds.toMoney(rawMoney: budget)) - Credit: \(DataService.ds.toMoney(rawMoney: spent - budget))"
         } else {
-            remainingLabel.text = "$\(String(format: "%.2f", remaining))"
+            remainingLabel.text = DataService.ds.toMoney(rawMoney: remaining)
         }
         moneyField.text = ""
     }
@@ -84,7 +90,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             changeViews()
             showMoneyLabels()
         } else if moneyField.text != "" && budgetSaved == true {
-            lastItem = priceWithTax(rawPrice: Double(moneyField.text!)!)
+            lastItem = DataService.ds.priceWithTax(rawPrice: Double(moneyField.text!)!, tax: tax)
             spent += lastItem
             remaining = budget - spent
             
@@ -149,7 +155,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    // PickerView + Tax
+    // PickerView
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
@@ -168,38 +174,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else if component == 3 {
             return "%"
         }
-        return "\(taxArray()[row])"
+        return "\(DataService.ds.taxArray()[row])"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if component == 0 {
-            taxL = taxArray()[row]
+            taxL = DataService.ds.taxArray()[row]
         } else if component == 2 {
-            taxR = taxArray()[row]
+            taxR = DataService.ds.taxArray()[row]
         }
         
         tax = Double("\(taxL).\(taxR)")!
         
         taxLabel.text = "Tax: \(tax)%"
-    }
-    
-    func taxArray() -> [Int] {
-        var taxes = [Int]()
-        
-        for tax in 0...9 {
-            taxes.append(tax)
-        }
-        
-        return taxes
-    }
-    
-    func priceWithTax(rawPrice: Double) -> Double {
-        var price = 0.0
-        
-        price = rawPrice * ((tax / 100) + 1)
-        
-        return price
     }
     
     // Other stuff
@@ -220,5 +208,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         setupViews()
     }
     
+    // Save
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        DataService.ds.saveSessionLocally(budget: budget, credit: credit, spent: spent, cash: cash) {
+            (result: String) in
+            
+            print(result)
+            
+            self.closeSession()
+        }
+    }
+    
+    func closeSession() {
+        self.dismiss(animated: true, completion: nil)
+        delegate?.reloadSessions()
+    }
 }
 
