@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = true
         
         taxPicker.delegate = self
         taxPicker.dataSource = self
@@ -223,6 +223,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func closeSession() {
         self.dismiss(animated: true, completion: nil)
         delegate?.reloadSessions()
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
