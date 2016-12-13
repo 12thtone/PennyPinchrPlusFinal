@@ -39,6 +39,10 @@ class DataService {
         return formatter.string(from: NSNumber(value: Double(rawMoney)!))!
     }
     
+    func cleanDoubleMoney(dirtyString: String) -> Double {
+        return Double(dirtyString.replacingOccurrences(of: "$", with: "").replacingOccurrences(of: ",", with: ""))!
+    }
+    
     func taxArray() -> [Int] {
         var taxes = [Int]()
         
@@ -120,7 +124,7 @@ class DataService {
     
     func saveBudgetLocally(budget: String, completion:@escaping (_ result: String) -> Void) {
         let entityName = "Budget"
-        let budgetToSave = budget
+        let budgetToSave = budget.replacingOccurrences(of: "$", with: "").replacingOccurrences(of: ",", with: "")
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
@@ -140,7 +144,7 @@ class DataService {
             try managedContext.save()
             sessions.append(session)
             
-            completion("done")
+            completion(budgetToSave)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

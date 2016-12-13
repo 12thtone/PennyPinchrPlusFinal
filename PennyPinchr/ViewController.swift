@@ -100,7 +100,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBAction func enterTapped(_ sender: Any) {
         if moneyField.text != "" && budgetSaved == false {
-            budget = Double(moneyField.text!)!
+            budget = DataService.ds.cleanDoubleMoney(dirtyString: moneyField.text!)
             remaining = budget
             
             budgetSaved = true
@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             changeViews()
             showMoneyLabels()
         } else if moneyField.text != "" && budgetSaved == true {
-            lastItem = DataService.ds.priceWithTax(rawPrice: Double(moneyField.text!)!, tax: tax)
+            lastItem = DataService.ds.priceWithTax(rawPrice: DataService.ds.cleanDoubleMoney(dirtyString: moneyField.text!), tax: tax)
             spent += lastItem
             remaining = budget - spent
             
@@ -123,6 +123,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if remaining < 0 {
             overBudget()
         }
+        
+        tfString = ""
+        tfCounter = 0
     }
     
     func overBudget() {

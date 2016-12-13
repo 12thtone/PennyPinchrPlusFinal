@@ -13,7 +13,7 @@ protocol SessionDelegate {
     func reloadSessions()
 }
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SessionDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SessionDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var budgetLabel: UILabel!
@@ -23,6 +23,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var budget = [BudgetModel]()
     var savedSessions = [NSManagedObject]()
     var savedBudget = [NSManagedObject]()
+    
+    var newUserAlertController = UIAlertController()
+    var newPeriodAlertController = UIAlertController()
+    var newBudgetCounter = 0
+    var newBudgetString = ""
+    
+    var isEditingPeriodBudget = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +113,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             spentLabel.text = "Period Spent: \(DataService.ds.toMoney(rawMoney: Double(DataService.ds.totalSpent(sessions: sessions))!))"
         }
         
+        if Double(DataService.ds.totalSpent(sessions: sessions))! > Double(budget.first!.budget)! {
+            handleOverBudget()
+        }
+        
         tableView.reloadData()
     }
     
@@ -145,6 +156,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func reloadSessions() {
         loadData()
+        
+        if Double(DataService.ds.totalSpent(sessions: sessions))! > Double(budget.first!.budget)! {
+            overBudgetAlert()
+        }
     }
     
     @IBAction func addShopSession(_ sender: Any) {
@@ -156,24 +171,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func calenderTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "New Budget Period", message: "Time for a new budged period?\n\nCreating a new one will clear the old.", preferredStyle: .alert)
+        isEditingPeriodBudget = true
         
-        alertController.addTextField { (textField) in
+        newPeriodAlertController = UIAlertController(title: "New Budget Period", message: "Time for a new budged period?\n\nCreating a new one will clear the old.", preferredStyle: .alert)
+        
+        newPeriodAlertController.addTextField { (textField) in
+            self.newPeriodAlertController.textFields![0].delegate = self
+            
             textField.placeholder = "$0.00"
-            textField.keyboardType = .numbersAndPunctuation
+            textField.keyboardType = .numberPad
+            textField.clearButtonMode = .always
         }
         
         let okAction = UIAlertAction(title: "Create New Budget", style: .default) { (action) in
-            self.addNewBudget(newBudget: (alertController.textFields?[0].text)!)
+            self.isEditingPeriodBudget = false
+            self.addNewBudget(newBudget: (self.newPeriodAlertController.textFields?[0].text)!)
         }
-        alertController.addAction(okAction)
+        newPeriodAlertController.addAction(okAction)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            
+            self.isEditingPeriodBudget = false
         }
-        alertController.addAction(cancelAction)
+        newPeriodAlertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true) {
+        self.present(newPeriodAlertController, animated: true) {
             
         }
     }
@@ -183,26 +204,72 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             (result: String) in
             
             print(result)
-            self.budgetLabel.text = "Period Budget: \(DataService.ds.toMoney(rawMoney: Double(newBudget)!))"
+            self.budgetLabel.text = "Period Budget: \(DataService.ds.toMoney(rawMoney: Double(result)!))"
             self.spentLabel.text = "Period Spent: $0.00"
         }
     }
     
-    func newUserBudget() {
-        let alertController = UIAlertController(title: "Welcome to PennyPinchr!", message: "To get started, please enter your budget for this period.", preferredStyle: .alert)
+    // Over budget
+    
+    func handleOverBudget() {
+        spentLabel.textColor = UIColor.red
+        spentLabel.font = UIFont(name: "Avenir-Black", size: 14)
+        spentLabel.text = "Period Spent: \(DataService.ds.toMoney(rawMoney: Double(DataService.ds.totalSpent(sessions: sessions))!))!!"
+    }
+    
+    func overBudgetAlert() {
+        newUserAlertController = UIAlertController(title: "Over Budget!", message: "Swipe to delete transactions if you saved the receipt!", preferredStyle: .alert)
         
-        alertController.addTextField { (textField) in
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+        }
+        newUserAlertController.addAction(okAction)
+        
+        self.present(newUserAlertController, animated: true) {
+            
+        }
+    }
+    
+    // New User Mgmt
+    
+    func newUserBudget() {
+        newUserAlertController = UIAlertController(title: "Welcome to PennyPinchr!", message: "To get started, please enter your budget for this period.", preferredStyle: .alert)
+        
+        newUserAlertController.addTextField { (textField) in
+            self.newUserAlertController.textFields![0].delegate = self
+            
             textField.placeholder = "$0.00"
-            textField.keyboardType = .numbersAndPunctuation
+            textField.keyboardType = .numberPad
+            textField.clearButtonMode = .always
         }
         
         let okAction = UIAlertAction(title: "Create Budget", style: .default) { (action) in
-            self.addNewBudget(newBudget: (alertController.textFields![0].text)!)
+            self.addNewBudget(newBudget: (self.newUserAlertController.textFields![0].text)!)
         }
-        alertController.addAction(okAction)
+        newUserAlertController.addAction(okAction)
         
-        self.present(alertController, animated: true) {
+        self.present(newUserAlertController, animated: true) {
             
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        newBudgetCounter += 1
+        newBudgetString += string
+        
+        if isEditingPeriodBudget {
+            newPeriodAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+        } else {
+            newUserAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+        }
+        
+        return false
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        newBudgetCounter = 0
+        newBudgetString = ""
+        
+        return true
     }
 }
