@@ -20,6 +20,7 @@
 		03979CF41DFC6BD000855574 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03979CF11DFC684000855574 /* DataModel.xcdatamodeld */; };
 		03CD1DAA1DFDBBAA00CFECC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD1DA91DFDBBAA00CFECC8 /* DataService.swift */; };
 		03CD1DAE1DFDC67C00CFECC8 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD1DAD1DFDC67C00CFECC8 /* SessionModel.swift */; };
+		03D5C7031DFEF4A600E4484E /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C7021DFEF4A600E4484E /* BudgetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		03979CF21DFC684000855574 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		03CD1DA91DFDBBAA00CFECC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		03CD1DAD1DFDC67C00CFECC8 /* SessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		03D5C7021DFEF4A600E4484E /* BudgetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				03979CF11DFC684000855574 /* DataModel.xcdatamodeld */,
 				03CD1DAD1DFDC67C00CFECC8 /* SessionModel.swift */,
+				03D5C7021DFEF4A600E4484E /* BudgetModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				03979CF01DFC64C800855574 /* HomeTableViewCell.swift in Sources */,
 				03979CE91DFC5E3100855574 /* HomeViewController.swift in Sources */,
 				03CD1DAE1DFDC67C00CFECC8 /* SessionModel.swift in Sources */,
+				03D5C7031DFEF4A600E4484E /* BudgetModel.swift in Sources */,
 				03979CF41DFC6BD000855574 /* DataModel.xcdatamodeld in Sources */,
 				03979CB91DFB1AA100855574 /* ViewController.swift in Sources */,
 				03979CB71DFB1AA100855574 /* AppDelegate.swift in Sources */,

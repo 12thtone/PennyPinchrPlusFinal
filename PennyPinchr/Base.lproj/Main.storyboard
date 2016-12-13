@@ -27,10 +27,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDf-mU-8sC">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="576"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TWK-Cg-8Hu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="576"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -131,54 +131,107 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfw-97-Ahv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period Spent: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-aX-Xgz">
+                                        <rect key="frame" x="8" y="46" width="261" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="xgE-49-54s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period Budget: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdF-uL-LWF">
+                                        <rect key="frame" x="8" y="28" width="261" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="OLG-fC-lde"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions in Period:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaP-x4-gzI">
+                                        <rect key="frame" x="8" y="70" width="261" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="89b-Il-EWH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-Yl-lNh">
+                                        <rect key="frame" x="321" y="52" width="38" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="958-kW-Lbc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="XmZ-q9-fmM"/>
+                                            <constraint firstAttribute="height" constant="30" id="ac6-Kn-G5Y"/>
+                                            <constraint firstAttribute="width" constant="38" id="mFG-Ai-j74"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="cart"/>
+                                        <connections>
+                                            <action selector="addShopSession:" destination="Rd7-7u-ber" eventType="touchUpInside" id="92k-rE-HAI"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dzb-NO-FPW">
+                                        <rect key="frame" x="277" y="28" width="90" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="A4w-4B-Jzz"/>
+                                            <constraint firstAttribute="width" constant="90" id="nlP-KY-44f"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.8064265839041096" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="sDX-XQ-BSO"/>
+                                    <constraint firstItem="Dzb-NO-FPW" firstAttribute="top" secondItem="Tfw-97-Ahv" secondAttribute="top" constant="28" id="5Yd-tD-Q0E"/>
+                                    <constraint firstItem="Dzb-NO-FPW" firstAttribute="leading" secondItem="JdF-uL-LWF" secondAttribute="trailing" constant="8" id="6wL-1j-IGP"/>
+                                    <constraint firstItem="i7i-Yl-lNh" firstAttribute="trailing" secondItem="Tfw-97-Ahv" secondAttribute="trailingMargin" constant="-8" id="7kT-Nq-n2m"/>
+                                    <constraint firstItem="JdF-uL-LWF" firstAttribute="leading" secondItem="Tfw-97-Ahv" secondAttribute="leading" constant="8" id="9A1-Lx-DZ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dzb-NO-FPW" secondAttribute="trailing" constant="8" id="Hob-qJ-hmQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="i7i-Yl-lNh" secondAttribute="bottom" constant="8" id="Hxy-ma-4Ho"/>
+                                    <constraint firstItem="JdF-uL-LWF" firstAttribute="top" secondItem="Tfw-97-Ahv" secondAttribute="top" constant="28" id="Rs8-b4-9nR"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7i-Yl-lNh" secondAttribute="trailing" constant="16" id="VZs-Er-dRv"/>
+                                    <constraint firstItem="i7i-Yl-lNh" firstAttribute="leading" secondItem="FOQ-aX-Xgz" secondAttribute="trailing" constant="52" id="X1K-QO-LpR"/>
+                                    <constraint firstItem="FOQ-aX-Xgz" firstAttribute="top" secondItem="JdF-uL-LWF" secondAttribute="bottom" constant="2" id="cUj-vy-iAq"/>
+                                    <constraint firstItem="FOQ-aX-Xgz" firstAttribute="leading" secondItem="Tfw-97-Ahv" secondAttribute="leading" constant="8" id="dct-1m-oUp"/>
+                                    <constraint firstItem="DaP-x4-gzI" firstAttribute="leading" secondItem="Tfw-97-Ahv" secondAttribute="leading" constant="8" id="ky4-Sf-UV0"/>
+                                    <constraint firstAttribute="bottom" secondItem="DaP-x4-gzI" secondAttribute="bottom" constant="8" id="pCW-BI-yh4"/>
+                                    <constraint firstAttribute="height" constant="90" id="sDX-XQ-BSO"/>
+                                    <constraint firstItem="i7i-Yl-lNh" firstAttribute="leading" secondItem="DaP-x4-gzI" secondAttribute="trailing" constant="52" id="zRM-yc-ZOx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions in Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-aX-Xgz">
-                                <rect key="frame" x="16" y="46" width="297" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLL-7l-Ukt">
+                                <rect key="frame" x="283" y="53" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HPp-cf-6cH"/>
+                                    <constraint firstAttribute="width" constant="30" id="GQF-0G-aQ3"/>
+                                    <constraint firstAttribute="height" constant="30" id="WjD-Xj-ndt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-Yl-lNh">
-                                <rect key="frame" x="321" y="46" width="38" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ac6-Kn-G5Y"/>
-                                    <constraint firstAttribute="width" constant="38" id="mFG-Ai-j74"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="cart"/>
+                                <state key="normal" backgroundImage="calender"/>
                                 <connections>
-                                    <action selector="addShopSession:" destination="Rd7-7u-ber" eventType="touchUpInside" id="92k-rE-HAI"/>
+                                    <action selector="calenderTapped:" destination="Rd7-7u-ber" eventType="touchUpInside" id="j2Z-pN-Ntm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FOQ-aX-Xgz" firstAttribute="leading" secondItem="Idv-hI-3Fq" secondAttribute="leadingMargin" id="1yA-CL-m9l"/>
                             <constraint firstAttribute="trailing" secondItem="n9w-Cg-ijy" secondAttribute="trailing" id="78i-oD-9YZ"/>
-                            <constraint firstItem="FOQ-aX-Xgz" firstAttribute="top" secondItem="dyp-aT-eil" secondAttribute="bottom" constant="26" id="A1z-tv-BhY"/>
                             <constraint firstItem="sAa-WE-ImM" firstAttribute="top" secondItem="BDf-mU-8sC" secondAttribute="bottom" id="Eg9-CI-m0t"/>
                             <constraint firstItem="n9w-Cg-ijy" firstAttribute="top" secondItem="Idv-hI-3Fq" secondAttribute="top" id="K7x-gr-phY"/>
                             <constraint firstItem="BDf-mU-8sC" firstAttribute="leading" secondItem="Idv-hI-3Fq" secondAttribute="leading" id="LI8-Ph-ByF"/>
-                            <constraint firstItem="i7i-Yl-lNh" firstAttribute="trailing" secondItem="Idv-hI-3Fq" secondAttribute="trailingMargin" id="LOr-mc-aBr"/>
+                            <constraint firstItem="BDf-mU-8sC" firstAttribute="top" secondItem="KLL-7l-Ukt" secondAttribute="bottom" constant="8" id="Pgs-gW-yl0"/>
                             <constraint firstItem="sAa-WE-ImM" firstAttribute="top" secondItem="n9w-Cg-ijy" secondAttribute="bottom" id="QW8-sh-Mxl"/>
-                            <constraint firstItem="i7i-Yl-lNh" firstAttribute="leading" secondItem="FOQ-aX-Xgz" secondAttribute="trailing" constant="8" id="T8a-xJ-StR"/>
                             <constraint firstAttribute="trailing" secondItem="Tfw-97-Ahv" secondAttribute="trailing" id="TFJ-58-tbX"/>
                             <constraint firstItem="n9w-Cg-ijy" firstAttribute="leading" secondItem="Idv-hI-3Fq" secondAttribute="leading" id="aOW-MC-60o"/>
                             <constraint firstAttribute="trailing" secondItem="BDf-mU-8sC" secondAttribute="trailing" id="fNS-8q-Lfu"/>
                             <constraint firstItem="Tfw-97-Ahv" firstAttribute="top" secondItem="Idv-hI-3Fq" secondAttribute="top" id="fUU-hb-CIu"/>
                             <constraint firstItem="Tfw-97-Ahv" firstAttribute="leading" secondItem="Idv-hI-3Fq" secondAttribute="leading" id="jdi-kn-oQd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KLL-7l-Ukt" secondAttribute="trailing" constant="46" id="p3D-ah-bwz"/>
                             <constraint firstItem="BDf-mU-8sC" firstAttribute="top" secondItem="Tfw-97-Ahv" secondAttribute="bottom" constant="1" id="uUl-49-mRM"/>
-                            <constraint firstItem="i7i-Yl-lNh" firstAttribute="top" secondItem="dyp-aT-eil" secondAttribute="bottom" constant="26" id="xUo-TN-4qj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="budgetLabel" destination="JdF-uL-LWF" id="3Bs-q1-CVx"/>
+                        <outlet property="spentLabel" destination="FOQ-aX-Xgz" id="1VN-Ct-YeU"/>
                         <outlet property="tableView" destination="TWK-Cg-8Hu" id="9wl-BN-Xhj"/>
                     </connections>
                 </viewController>
@@ -419,11 +472,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calender" width="612" height="630"/>
         <image name="cancel" width="120" height="118"/>
         <image name="cart" width="120" height="103"/>
         <image name="cash" width="160" height="120"/>
         <image name="credit" width="140" height="120"/>
         <image name="dollar" width="819" height="1920"/>
+        <image name="name_logo" width="605" height="111"/>
         <image name="reset" width="120" height="123"/>
         <image name="save" width="120" height="122"/>
     </resources>

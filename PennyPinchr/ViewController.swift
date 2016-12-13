@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var moneyField: UITextField!
     @IBOutlet weak var spentLabel: UILabel!
@@ -31,6 +31,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var taxR = 0
     var tax = 0.0
     
+    var tfCounter = 0
+    var tfString = ""
+    
     var budgetSaved = false
     var hasCreditCard = false
 
@@ -41,6 +44,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         taxPicker.delegate = self
         taxPicker.dataSource = self
+        
+        moneyField.delegate = self
         
         setupViews()
     }
@@ -75,6 +80,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func showMoneyLabels() {
         spentLabel.isHidden = false
         remainingLabel.isHidden = false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        tfCounter += 1
+        tfString += string
+        
+        moneyField.text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(tfString)", charCount: tfCounter))!)
+        
+        return false
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        tfCounter = 0
+        tfString = ""
+        
+        return true
     }
 
     @IBAction func enterTapped(_ sender: Any) {

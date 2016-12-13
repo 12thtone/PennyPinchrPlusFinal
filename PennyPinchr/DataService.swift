@@ -17,7 +17,26 @@ class DataService {
     var sessions = [NSManagedObject]()
     
     func toMoney(rawMoney: Double) -> String {
-        return "$\(String(format: "%.2f", rawMoney))"
+        return "\(moneyCommaFormat(rawMoney: String(format: "%.2f", rawMoney)))"
+    }
+    
+    func toMoneyNDS(rawMoney: Double) -> String {
+        return "\(String(format: "%.2f", rawMoney))"
+    }
+    
+    func moneyDouble(rawString: String, charCount: Int) -> String {
+        let cleanString = rawString.replacingOccurrences(of: "$", with: "")
+        
+        return "\(Double(cleanString)! / 100.0)"
+    }
+    
+    func moneyCommaFormat(rawMoney: String) -> String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = NSLocale(localeIdentifier: "en_US") as Locale!
+        
+        return formatter.string(from: NSNumber(value: Double(rawMoney)!))!
     }
     
     func taxArray() -> [Int] {
@@ -36,6 +55,16 @@ class DataService {
         price = rawPrice * ((tax / 100) + 1)
         
         return price
+    }
+    
+    func totalSpent(sessions: [SessionModel]) -> String {
+        var spentString = 0.0
+        
+        for session in sessions {
+            spentString += Double("\(session.total)")!
+        }
+        
+        return "\(spentString)"
     }
     
     func dateToday() -> String {
@@ -63,10 +92,10 @@ class DataService {
         }
         
         session.setValue(dateToday(), forKeyPath: "date")
-        session.setValue(toMoney(rawMoney: budget), forKeyPath: "budget")
-        session.setValue(toMoney(rawMoney: creditToSave), forKeyPath: "credit")
-        session.setValue(toMoney(rawMoney: spent), forKeyPath: "total")
-        session.setValue(toMoney(rawMoney: cashToSave), forKeyPath: "cash")
+        session.setValue(toMoneyNDS(rawMoney: budget), forKeyPath: "budget")
+        session.setValue(toMoneyNDS(rawMoney: creditToSave), forKeyPath: "credit")
+        session.setValue(toMoneyNDS(rawMoney: spent), forKeyPath: "total")
+        session.setValue(toMoneyNDS(rawMoney: cashToSave), forKeyPath: "cash")
         
         do {
             try managedContext.save()
@@ -86,6 +115,34 @@ class DataService {
         } catch {
             let saveError = error as NSError
             print(saveError)
+        }
+    }
+    
+    func saveBudgetLocally(budget: String, completion:@escaping (_ result: String) -> Void) {
+        let entityName = "Budget"
+        let budgetToSave = budget
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)!
+        let session = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        do {
+            try managedContext.execute(deleteRequest)
+        } catch {
+            print(error)
+        }
+        
+        session.setValue(budgetToSave, forKeyPath: "currentBudget")
+        
+        do {
+            try managedContext.save()
+            sessions.append(session)
+            
+            completion("done")
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
 }
