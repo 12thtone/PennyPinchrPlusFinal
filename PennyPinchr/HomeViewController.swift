@@ -48,6 +48,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(true)
         
         if budget.isEmpty {
+            
             newUserBudget()
         }
     }
@@ -101,6 +102,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func setViews() {
+        
         if budget.isEmpty {
             budgetLabel.text = "Period Budget: $0.00"
         } else {
@@ -113,8 +115,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             spentLabel.text = "Period Spent: \(DataService.ds.toMoney(rawMoney: Double(DataService.ds.totalSpent(sessions: sessions))!))"
         }
         
-        if Double(DataService.ds.totalSpent(sessions: sessions))! > Double(budget.first!.budget)! {
-            handleOverBudget()
+        if sessions.isEmpty == false {
+            if Double(DataService.ds.totalSpent(sessions: sessions))! > Double(budget.first!.budget)! {
+                handleOverBudget()
+            }
         }
         
         tableView.reloadData()
