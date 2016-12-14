@@ -83,10 +83,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        tfCounter += 1
-        tfString += string
-        
-        moneyField.text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(tfString)", charCount: tfCounter))!)
+        if string != "" {
+            tfCounter += 1
+            tfString += string
+            
+            moneyField.text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(tfString)", charCount: tfCounter))!)
+        } else {
+            tfCounter -= 1
+            if tfCounter != 0 {
+                tfString.characters.removeLast()
+                
+                moneyField.text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(tfString)", charCount: tfCounter))!)
+            } else {
+                moneyField.text = ""
+                tfCounter = 0
+                tfString = ""
+            }
+        }
         
         return false
     }
