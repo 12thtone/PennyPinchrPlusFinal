@@ -258,13 +258,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        newBudgetCounter += 1
-        newBudgetString += string
         
         if isEditingPeriodBudget {
-            newPeriodAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+            
+            if string != "" {
+                newBudgetCounter += 1
+                newBudgetString += string
+                
+                newPeriodAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+            } else {
+                newBudgetCounter -= 1
+                if newBudgetCounter != 0 {
+                    newBudgetString.characters.removeLast()
+                    
+                    newPeriodAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+                } else {
+                    newPeriodAlertController.textFields?[0].text = ""
+                    newBudgetCounter = 0
+                    newBudgetString = ""
+                }
+            }
         } else {
-            newUserAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+            
+            if string != "" {
+                newBudgetCounter += 1
+                newBudgetString += string
+                
+                newUserAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+            } else {
+                newBudgetCounter -= 1
+                if newBudgetCounter != 0 {
+                    newBudgetString.characters.removeLast()
+                    
+                    newUserAlertController.textFields?[0].text = DataService.ds.toMoney(rawMoney: Double(DataService.ds.moneyDouble(rawString: "\(newBudgetString)", charCount: newBudgetCounter))!)
+                } else {
+                    newUserAlertController.textFields?[0].text = ""
+                    newBudgetCounter = 0
+                    newBudgetString = ""
+                }
+            }
         }
         
         return false
