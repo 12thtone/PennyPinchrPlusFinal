@@ -13,7 +13,7 @@ This is the final version of the second tutorial series. The following is a brie
 * Custom UITableViewCell
 * Custom Protocols
 * UITextFieldDelegate Protocol
-* Stuff from the first tutorial
+* Stuff from the [first tutorial](https://github.com/12thtone/PennyPinchrFinal)
 
 The next tutorial series brings Penny Pinchr to the whole family. Here is the repo for Penny Pinchr Family.
 
