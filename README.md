@@ -1,4 +1,4 @@
-# Penny Pinchr Plus
+# PennyPinchr Plus
 
 ### Budget Manager for Tutorial
 
@@ -13,9 +13,9 @@ This is the final version of the second tutorial series. The following is a brie
 * Custom UITableViewCell
 * Custom Protocols
 * UITextFieldDelegate Protocol
-* Stuff from the [first tutorial](https://github.com/12thtone/PennyPinchrFinal)
+* Stuff from the [first PennyPinchr tutorial](https://github.com/12thtone/PennyPinchrFinal)
 
-The next tutorial series brings Penny Pinchr to the whole family. Here is the repo for Penny Pinchr Family.
+The next tutorial series brings PennyPinchr to the whole family. Coming soon is the repo for PennyPinchr Family.
 
 **Tutorial videos will be available shorly.**
 
